@@ -12,10 +12,18 @@ pipeline {
                       echo " clone github code "
                       git branch: 'main',
                       credentialsId: 'github_credentials',
-                      url: 'https://github.com/youssefpfe/frontend.git'
+                      url: 'https://github.com/youssefpfe/hopital-militaire.git'
                       echo " finish cloning "
                       }
          }
+
+         stage('Test'){
+                     steps {
+
+                         // Maven Test .
+                         sh "mvn test"
+
+                     }
 
         stage('Build'){
             steps {
@@ -26,10 +34,10 @@ pipeline {
             }
         }
 
-       stage('Build docker image '){
+/*       stage('Build docker image '){
                    steps {
 
-                       echo "Build a docker image to angular application "
+                       echo "Build a docker image to Backend  hopital-militaire "
                        sh ' docker build -t youssefpfe/pfeapps:hopital.$BUILD_ID . '
                        sh "docker images"
                        echo " docker image fineshed built "
@@ -61,7 +69,8 @@ pipeline {
 
 
             }
-        }
+
+        } */
 
     }
 }
