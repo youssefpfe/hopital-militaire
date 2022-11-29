@@ -34,6 +34,18 @@ pipeline {
             }
         }
 
+         stage('Static Code Analysis'){
+                    steps {
+                        script {
+
+                             withSonarQubeEnv(credentialsId: 'sonarqube_credentials') {
+                             sh 'mvn clean package sonar:sonar'
+                             }
+                        }
+
+                    }
+          }
+
 /*       stage('Build docker image '){
                    steps {
 
