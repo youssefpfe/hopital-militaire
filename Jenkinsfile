@@ -120,7 +120,7 @@ pipeline {
                      }
                  }
 
-/*       stage('Build docker image '){
+      stage('Build docker image '){
                    steps {
 
                        echo "Build a docker image to Backend  hopital-militaire "
@@ -135,9 +135,9 @@ pipeline {
                 stage('Push the image to DockerHub '){
                    steps {
 
-                      withCredentials([string(credentialsId: 'dockerhub_cred', variable: 'dockerhub')]) {
+                      withCredentials([string(credentialsId: 'dockerhub_cred', variable: 'dockerhub_cred')]) {
                          echo " login dockerhub "
-                         sh ' docker login -u youssefpfe -p ${dockerhub} '
+                         sh ' docker login -u youssefpfe -p ${dockerhub_cred} '
                          echo " pushing to dockerhub"
                          sh ' docker push youssefpfe/pfeapps:hopital.$BUILD_ID '
                       }
@@ -156,7 +156,7 @@ pipeline {
 
             }
 
-        } */
+        }
 
     }
 }
