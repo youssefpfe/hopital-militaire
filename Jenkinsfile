@@ -145,7 +145,7 @@ pipeline {
                    }
                }
 
-        stage('Deploy on docker compose '){
+     /*   stage('Deploy on docker compose '){
             steps {
 
                 echo "Deploying"
@@ -156,7 +156,7 @@ pipeline {
 
             }
 
-        }
+        }*/
 
     }
 }
