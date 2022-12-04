@@ -135,9 +135,9 @@ pipeline {
                 stage('Push the image to DockerHub '){
                    steps {
 
-                      withCredentials([string(credentialsId: 'dockerhub_cred', variable: 'dockerhub_cred')]) {
+                      withCredentials([string(credentialsId: 'dockerhub_credential', variable: 'dockerhub_credential')]) {
                          echo " login dockerhub "
-                         sh ' docker login -u youssefpfe -p ${dockerhub_cred} '
+                         sh ' docker login -u youssefpfe -p ${dockerhub_credential} '
                          echo " pushing to dockerhub"
                          sh ' docker push youssefpfe/pfeapps:hopital.$BUILD_ID '
                       }
