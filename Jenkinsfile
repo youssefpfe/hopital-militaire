@@ -28,7 +28,7 @@ pipeline {
                       echo " clone github code "
                       git branch: 'main',
                       credentialsId: 'github_credentials',
-                      url: 'https://github.com/youssefpfe/hopital-militaire.git'
+                      url: 'https://github.com/youssefpfe/assurance.git'
                       echo " finish cloning "
                       }
          }
